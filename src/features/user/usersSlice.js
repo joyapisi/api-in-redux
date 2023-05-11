@@ -11,7 +11,7 @@ export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
   async (name, thunkAPI) => {
     try {
-      const resp = await axios('url');
+      const resp = await axios('https://some-domain.com/api');
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('Oops! Something went wrong');
