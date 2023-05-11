@@ -3,12 +3,12 @@ import axios from 'axios';
 
 const initialState = {
   users: [],
-  isLoading: true,
+  isLoading: false,
   error: [undefined],
 };
 
 export const fetchUsers = createAsyncThunk(
-  'users/getusers',
+  'users/fetchUsers',
   async (name, thunkAPI) => {
     try {
       const resp = await axios('url');

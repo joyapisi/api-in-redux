@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Users from './features/user/Users';
-import { fetchUsers } from './features/user/usersSlice';
+import fetchUsers from './features/user/usersSlice';
 
 function App() {
   const { isLoading } = useSelector((store) => store.users);
