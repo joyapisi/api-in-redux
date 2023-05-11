@@ -32,20 +32,18 @@ export const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getusers.pending, (state) => {
+      .addCase(fetchUsers.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getusers.fulfilled, (state, action) => {
-        // console.log(action);
+      .addCase(fetchUsers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.users = action.payload;
       })
-      .addCase(getusers.rejected, (state, action) => {
-        // console.log(action);
-        state.isLoading = false;
-        state.users = action.payload;
+      .addCase(fetchUsers.rejected, (state, action) => {
+        console.log('Error', action.payload);
+        state.error = true;
       });
-  }
+  },
 });
 
 export const { addUser, removeUser } = usersSlice.actions;
